@@ -29,7 +29,9 @@ public class StudentLogin {
 		ResultSet rs = pstmt1.executeQuery();
 		String username = "";
 		String password = "";
-
+		
+		StudentAns studentAns= new StudentAns();
+		
 		while (rs.next()) {
 
 			username = rs.getString("username");
@@ -45,10 +47,10 @@ public class StudentLogin {
 
 			ResultSet rs1 = pstmt2.executeQuery();
 			
-			Boolean flag=true;
+		
 			
 			
-			while (rs1.get ) {
+			while (rs1.next() ) {
 				
 				for(int j=1;j<=1;j++) {
 				System.out.println("questions:" + rs1.getString("questions"));
@@ -58,6 +60,11 @@ public class StudentLogin {
 				System.out.println("op4 " + rs1.getString("op4"));
 
 				System.out.println("------------------------------------------------------------------");
+				
+				System.out.println("Type the options numbers only");
+				studentAns.ans();
+				
+				
 				}
 			}
 		}
@@ -65,13 +72,13 @@ public class StudentLogin {
 		{
 			System.out.println("Invalid Username or Password");
 		}
-		System.out.println("Type the options numbers only");
 		
 		
 		
-		StudentAns studentAns= new StudentAns();
 		
-		studentAns.ans();
+		
+		
+		
 		
 		
 		
