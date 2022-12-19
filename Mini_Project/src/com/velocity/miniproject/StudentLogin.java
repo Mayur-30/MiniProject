@@ -29,9 +29,9 @@ public class StudentLogin {
 		ResultSet rs = pstmt1.executeQuery();
 		String username = "";
 		String password = "";
-		
-		StudentAns studentAns= new StudentAns();
-		
+
+		StudentAns studentAns = new StudentAns();
+
 		while (rs.next()) {
 
 			username = rs.getString("username");
@@ -41,47 +41,32 @@ public class StudentLogin {
 		System.out.println("Enter the Username and Password");
 		String uname = sc.next();
 		String pword = sc.next();
-		
+
 		if (username.equals(uname) && password.equals(pword)) {
 			pstmt2 = con.prepareStatement("SELECT questions,op1, op2, op3, op4 FROM questions WHERE questions.sr_no");
 
 			ResultSet rs1 = pstmt2.executeQuery();
-			
-		
-			
-			
-			while (rs1.next() ) {
-				
-				for(int j=1;j<=1;j++) {
-				System.out.println("questions:" + rs1.getString("questions"));
-				System.out.println("op1: " + rs1.getString("op1"));
-				System.out.println("op2 " + rs1.getString("op2"));
-				System.out.println("op3 " + rs1.getString("op3"));
-				System.out.println("op4 " + rs1.getString("op4"));
 
-				System.out.println("------------------------------------------------------------------");
+			while (rs1.next()) {
+
 				
-				System.out.println("Type the options numbers only");
-				studentAns.ans();
+					System.out.println("questions:" + rs1.getString("questions"));
+					System.out.println("op1: " + rs1.getString("op1"));
+					System.out.println("op2 " + rs1.getString("op2"));
+					System.out.println("op3 " + rs1.getString("op3"));
+					System.out.println("op4 " + rs1.getString("op4"));
+
+					System.out.println("------------------------------------------------------------------");
+
+					System.out.println("Type the options numbers only");
+					studentAns.ans();
+
 				
-				
-				}
 			}
-		}
-		else
-		{
+		} else {
 			System.out.println("Invalid Username or Password");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		con.close();
 		pstmt.close();
 		pstmt1.close();
