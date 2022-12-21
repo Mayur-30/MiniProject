@@ -1,7 +1,7 @@
 package com.velocity.miniproject;
 
-
-
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class StudentAnalysis {
 
@@ -24,6 +24,8 @@ public class StudentAnalysis {
 			System.out.println("Performance: Class A");
 		}
 		return marks;
+		
+
 	}
 
 		
